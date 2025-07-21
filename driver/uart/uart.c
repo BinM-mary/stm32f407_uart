@@ -64,7 +64,7 @@ void uart_init(void)
 
 void uart_senddata(uint8_t data)
 {
-    UART_SendData(USART1, data);
+    USART_SendData(USART1, data);
     while (USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET); //等待发送完成
 }
 
