@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "cStandard": "c99",
+            "compilerPath": "C:/MinGW/bin/gcc.exe",
+            "cppStandard": "c++11",
+            "defines": [
+                "STM32F40_41xxx",
+                "USE_STDPERIPH_DRIVER",
+                "HSE_VALUE=8000000"
+            ],
+            "includePath": [
+                "app/inc",
+                "driver/**",
+                "firmware/cmsis/core",
+                "firmware/cmsis/device",
+                "firmware/driver/inc"
+            ],
+            "intelliSenseMode": "gcc-x64",
+            "name": "stm32f407"
+        }
+    ],
+    "version": 4
+}
