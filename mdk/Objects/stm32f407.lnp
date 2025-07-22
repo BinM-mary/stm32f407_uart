@@ -1,6 +1,7 @@
 --cpu=Cortex-M4.fp
 ".\objects\main.o"
 ".\objects\board.o"
+".\objects\add.o"
 ".\objects\led.o"
 ".\objects\uart.o"
 ".\objects\startup_stm32f40_41xxx.o"

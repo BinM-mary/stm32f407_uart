@@ -393,6 +393,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>app/command</GroupName>
+          <Files>
+            <File>
+              <FileName>add.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\command\add.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>driver</GroupName>
           <Files>
             <File>
