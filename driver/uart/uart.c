@@ -2,8 +2,6 @@
 
 static uart_rx_callback_t uart_rx_callback;
 
-
-
 static void uart_pin_init(void)
 {
     GPIO_InitTypeDef GPIO_InitStruct;
@@ -71,4 +69,17 @@ void uart_senddata(uint8_t data)
 void uart_receive_callback_register(uart_rx_callback_t callback)
 {
     uart_rx_callback = callback;
+}
+
+void USART1_IRQHandler(void)
+{
+    if (USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) //接收中断
+    {
+        uint8_t data = USART_ReceiveData(USART1);
+        if(uart_rx_callback)
+        {
+            uart_rx_callback(data);
+        }
+        USART_ClearITPendingBit(USART1, USART_IT_RXNE); //清除中断标志
+    }
 }

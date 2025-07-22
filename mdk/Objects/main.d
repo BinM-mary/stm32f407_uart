@@ -39,3 +39,5 @@
 .\objects\main.o: ..\app\inc\board.h
 .\objects\main.o: ..\driver\uart\uart.h
 .\objects\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\main.o: ..\third_lib\lettershell\shell.h
+.\objects\main.o: ..\third_lib\lettershell\shell_cfg.h
