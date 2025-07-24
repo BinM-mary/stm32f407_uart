@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER,HSE_VALUE=8000000</Define>
               <Undefine></Undefine>
-              <IncludePath>..\app\inc;..\driver\led;..\driver\uart;..\firmware\cmsis\core;..\firmware\cmsis\device;..\firmware\driver\inc;..\driver;..\third_lib\lettershell</IncludePath>
+              <IncludePath>..\app\inc;..\driver\led;..\driver\uart;..\firmware\cmsis\core;..\firmware\cmsis\device;..\firmware\driver\inc;..\driver;..\third_lib\lettershell;..\third_lib\ringbuffer</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -669,6 +669,11 @@
               <FileName>shell_ext.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\third_lib\lettershell\shell_ext.c</FilePath>
+            </File>
+            <File>
+              <FileName>ringbuffer8.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\third_lib\ringbuffer\ringbuffer8.c</FilePath>
             </File>
           </Files>
         </Group>

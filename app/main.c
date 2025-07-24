@@ -2,21 +2,12 @@
 #include "board.h"
 #include "uart.h"
 #include "shell.h"
+#include "ringbuffer8.h"
 
-static volatile uint8_t uart_rx_buffer;
+static uint8_t uart_buffer[128];
+static ringbuffer8_t uart_rx_buffer = NULL;
 static Shell shell;
 static char shellBuffer[512];
-
-static signed short _shell_read(char *data, unsigned short len)
-{
-	if(uart_rx_buffer)
-	{
-		*data = uart_rx_buffer;
-		uart_rx_buffer = 0;
-		return 1;
-	}
-	return 0;
-}
 
 static signed short _shell_write(char *data, unsigned short len)
 {
@@ -27,9 +18,13 @@ static signed short _shell_write(char *data, unsigned short len)
 	return len;
 }
 
+// 回调函数，如果环形缓冲区没满的话，将数据存入
 static void usart_receive(uint8_t data)
 {
-	uart_rx_buffer = data; // Store received data
+	if(uart_rx_buffer && !rb8_full(uart_rx_buffer))
+	{
+		rb8_put(uart_rx_buffer, data);
+	}
 }
 
 int main(void)
@@ -38,11 +33,20 @@ int main(void)
 	uart_init();
 	uart_receive_callback_register(usart_receive);
 
-	shell.read = _shell_read;
+	uart_rx_buffer = rb8_new(uart_buffer, sizeof(uart_buffer)); //创建环形缓冲区
+
 	shell.write = _shell_write;
 	shellInit(&shell, shellBuffer, sizeof(shellBuffer));
+
+	uint8_t data;
 	while(1)
 	{
-		shellTask(&shell);
+		if(!rb8_empty(uart_rx_buffer))  	   //若非空
+		{
+			if(rb8_get(uart_rx_buffer, &data)) //读入数据
+			{
+				shellHandler(&shell, data);
+			}
+		}
 	}
 }

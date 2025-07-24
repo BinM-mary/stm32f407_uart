@@ -9,5 +9,6 @@
         "**/.svn": true,
         "**/CVS": true,
         "**/Thumbs.db": true
-    }
+    },
+    "idf.pythonInstallPath": "d:\\esp\\516_tools\\tools\\idf-python\\3.11.2\\python.exe"
 }
