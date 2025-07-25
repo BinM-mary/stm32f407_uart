@@ -66,6 +66,14 @@ void uart_senddata(uint8_t data)
     while (USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET); //等待发送完成
 }
 
+void usart_send_string(const char *str, uint16_t len)
+{
+    for (uint16_t i = 0; i < len; i++)
+    {
+        uart_senddata(str[i]);
+    }
+}
+
 void uart_receive_callback_register(uart_rx_callback_t callback)
 {
     uart_rx_callback = callback;

@@ -17,11 +17,10 @@ struct ringbuffer8
     uint8_t buffer[];
 };
 
-
 ringbuffer8_t rb8_new(uint8_t *buff, uint32_t length)
 {
     ringbuffer8_t rb = (ringbuffer8_t)buff;
-    rb->length = length - sizeof(struct ringbuffer8);
+    rb->length = length - sizeof(struct ringbuffer8); 
 
     return rb;
 }

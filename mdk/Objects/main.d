@@ -36,9 +36,12 @@
 .\objects\main.o: ..\firmware\driver\inc\stm32f4xx_dcmi.h
 .\objects\main.o: ..\firmware\driver\inc\stm32f4xx_fsmc.h
 .\objects\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\main.o: ..\app\inc\board.h
 .\objects\main.o: ..\driver\uart\uart.h
 .\objects\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\main.o: ..\third_lib\lettershell\shell.h
 .\objects\main.o: ..\third_lib\lettershell\shell_cfg.h
 .\objects\main.o: ..\third_lib\ringbuffer\ringbuffer8.h
+.\objects\main.o: ..\third_lib\easylogger\inc\elog.h
+.\objects\main.o: ..\third_lib\easylogger\inc\elog_cfg.h

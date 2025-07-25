@@ -1,6 +1,10 @@
 --cpu=Cortex-M4.fp
 ".\objects\main.o"
 ".\objects\board.o"
+".\objects\mem.o"
+".\objects\mem_mgnt.o"
+".\objects\malloc.o"
+".\objects\assert.o"
 ".\objects\add.o"
 ".\objects\led.o"
 ".\objects\uart.o"
@@ -54,6 +58,10 @@
 ".\objects\shell_companion.o"
 ".\objects\shell_ext.o"
 ".\objects\ringbuffer8.o"
+".\objects\tlsf.o"
+".\objects\elog_port.o"
+".\objects\elog.o"
+".\objects\elog_utils.o"
 --library_type=microlib --strict --scatter ".\Objects\stm32f407.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

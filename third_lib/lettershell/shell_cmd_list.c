@@ -29,6 +29,7 @@ extern void shellVars(void);
 extern void shellKeys(void);
 extern void shellClear(void);
 extern int cmd_add(int argc, char *argv[]);
+extern int cmd_mem(int argc, char *argv[]);
 #if SHELL_EXEC_UNDEF_FUNC == 1
 extern int shellExecute(int argc, char *argv[]);
 #endif
@@ -93,6 +94,8 @@ const ShellCommand shellCommandList[] =
 #endif
     SHELL_CMD_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_TYPE(SHELL_TYPE_CMD_MAIN)|SHELL_CMD_DISABLE_RETURN, 
                    add, cmd_add, add a and b),
+    SHELL_CMD_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_TYPE(SHELL_TYPE_CMD_MAIN)|SHELL_CMD_DISABLE_RETURN, 
+                   mem, cmd_mem, add memory),
 };
 
 

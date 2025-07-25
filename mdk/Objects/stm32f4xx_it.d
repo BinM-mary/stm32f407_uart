@@ -37,3 +37,4 @@
 .\objects\stm32f4xx_it.o: ..\firmware\driver\inc\stm32f4xx_fsmc.h
 .\objects\stm32f4xx_it.o: ..\app\inc\main.h
 .\objects\stm32f4xx_it.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\stm32f4xx_it.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h

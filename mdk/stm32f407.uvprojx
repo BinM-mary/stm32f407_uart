@@ -334,9 +334,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER,HSE_VALUE=8000000</Define>
+              <Define>NDEBUG,STM32F40_41xxx,USE_STDPERIPH_DRIVER,HSE_VALUE=8000000</Define>
               <Undefine></Undefine>
-              <IncludePath>..\app\inc;..\driver\led;..\driver\uart;..\firmware\cmsis\core;..\firmware\cmsis\device;..\firmware\driver\inc;..\driver;..\third_lib\lettershell;..\third_lib\ringbuffer</IncludePath>
+              <IncludePath>..\app\inc;..\driver\led;..\driver\uart;..\firmware\cmsis\core;..\firmware\cmsis\device;..\firmware\driver\inc;..\driver;..\third_lib\lettershell;..\third_lib\ringbuffer;..\third_lib\tlsf;..\third_lib\easylogger\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -389,6 +389,26 @@
               <FileName>board.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\app\board.c</FilePath>
+            </File>
+            <File>
+              <FileName>mem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\command\mem.c</FilePath>
+            </File>
+            <File>
+              <FileName>mem_mgnt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\mem_mgnt.c</FilePath>
+            </File>
+            <File>
+              <FileName>malloc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\override\malloc.c</FilePath>
+            </File>
+            <File>
+              <FileName>assert.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\override\assert.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -674,6 +694,26 @@
               <FileName>ringbuffer8.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\third_lib\ringbuffer\ringbuffer8.c</FilePath>
+            </File>
+            <File>
+              <FileName>tlsf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\third_lib\tlsf\tlsf.c</FilePath>
+            </File>
+            <File>
+              <FileName>elog_port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\third_lib\easylogger\port\elog_port.c</FilePath>
+            </File>
+            <File>
+              <FileName>elog.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\third_lib\easylogger\src\elog.c</FilePath>
+            </File>
+            <File>
+              <FileName>elog_utils.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\third_lib\easylogger\src\elog_utils.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -19,7 +19,9 @@
                 "firmware/cmsis/device",
                 "firmware/driver/inc",
                 "third_lib/lettershell",
-                "third_lib/ringbuffer"
+                "third_lib/ringbuffer",
+                "third_lib/tlsf",
+                "third_lib/easylogger/**"
             ],
             "intelliSenseMode": "gcc-x64",
             "name": "stm32f407"
